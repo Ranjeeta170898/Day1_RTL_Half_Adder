@@ -1,7 +1,6 @@
 // Testbench
-//`include clk_gen.v
 `timescale 10ns/10ps
-`include "clk_gen.v"
+`include "half_adder.v"
 module tb();
 reg a,b;
 wire sum,carry;
@@ -18,10 +17,11 @@ a=1;b=1;
 end
   
 initial begin  
-$monitor("%t: a=%x,b=%x,sum=%x,carry=%x",$time,a,b,sum,carry);  
+$monitor("%t: a=%x,b=%x,sum=%x,carry=%x",$time,a,b,sum,carry);
+$dumpfile("dump.vcd"); 
+$dumpvars;  
 end
-  
-  
+
 endmodule 
 
 
